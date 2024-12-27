@@ -1,0 +1,1371 @@
+Login (Parital Done Password Encryption not working.)
+change password
+getProfile
+getbalance
+sportsList 
+
+seriesListSportsWise
+MatchList Sports Wise
+Match List series wise
+
+1. Update Time Zone API  (Done)
+2. One Click Bet Sport wise each User (Table : Sports wise setting)
+3. Change Password (Done)
+4. Get Available balance chips Credis (Table : Users )(Done)
+5. Score Board  (Done)
+6. Get Odds marketId wise using matchId
+
+
+172.104.43.22 
+## Hariesh Panel APIS Start 
+
+### get All Active Sports Harish panel dashboard
+POST http://localhost:8786/api/v5/our-sport HTTP/1.1
+Content-type: application/json
+
+
+
+### get News Feeds
+POST http://localhost:8786/api/v5/our-news HTTP/1.1
+Content-type: application/json
+
+
+### Done Dashboard Matches List 
+POST http://localhost:8786/api/v5/our-home HTTP/1.1
+Content-type: application/json
+
+### Done Dashboard Matches List  A-> All, P-> In-Play, U->Upcomming
+POST http://localhost:8786/api/v5/our-home-sport HTTP/1.1
+Content-type: application/json
+
+{
+	"sport_id":4,
+	"datatype":"U"
+}
+
+### Dashboard slider
+POST http://localhost:8786/api/v5/our-slide HTTP/1.1
+Content-type: application/json
+
+
+### Dashboard Footer Category and posts
+POST http://localhost:8786/api/v5/our-page HTTP/1.1 
+Content-type: application/json
+
+### Dashboard Footer Category and posts
+POST http://localhost:8786/api/v5/our-page-show HTTP/1.1
+Content-type: application/json
+
+{
+	"id":"deposit"
+}
+
+## Hariesh Panel APIS END 
+
+### get global settings
+POST http://localhost:8786/api/v5/setting HTTP/1.1
+Content-type: application/json
+
+### get rules
+POST http://localhost:8786/api/v5/getRules HTTP/1.1
+Content-type: application/json
+
+### get rules
+POST http://localhost:8786/api/v5/otp-verify HTTP/1.1
+Content-type: application/json
+
+{
+	"string":"MiNmvKhxPdmJYLu0NxFsbg8hwEURSfLaLTAyLjAw",
+	"otp":6960
+}
+
+### get rules
+POST http://localhost:8786/api/v5/registerOTPresend HTTP/1.1
+Content-type: application/json
+
+{
+	"string":"MjHkFaBZjLiq69cKWeAHqTKahImtChJuLjcuMDA=",
+}
+### get rules
+POST http://localhost:8786/api/v5/forgotOTPresend HTTP/1.1
+Content-type: application/json
+
+{
+	"string":"M7cjGBn5oZQ5Ekt6svpSiW6owYdBudr7bjcuMDA="
+}
+
+### get rules
+POST http://localhost:8786/api/v5/forgotOTP HTTP/1.1
+Content-type: application/json
+
+{
+	"mobile":9351338021
+}
+
+### get rules
+POST http://localhost:8786/api/v5/forgotOTPverify HTTP/1.1
+Content-type: application/json
+
+{
+	"string":"NcYy1F7WppCss2ltjOftbEgn3iBuN1gg2i4wMA==",
+	"otp":7592,
+	"password":"123456",
+	"confirmpassword":"123456"
+}
+
+### get global settings
+POST http://localhost:8786/api/v5/userexistornot HTTP/1.1
+Content-type: application/json
+
+{
+	"username":""
+}
+
+### register user
+POST http://localhost:8786/api/v5/register HTTP/1.1
+Content-type: application/json
+
+{
+	"name":"hello1234",
+	"username":"hello1234",
+	"mobile":9351338021,
+	"email":"test@gmail.com",
+	"password":"123456",
+	"confirmpassword":"123456"
+}
+
+###
+POST http://localhost:8786/api/v5/login HTTP/1.1
+Content-type: application/json
+
+{
+	"user_name":"manus",
+	"password":"111222"
+}
+### Done
+POST http://localhost:8786/api/v5/getProfile HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+ 
+
+
+### Done
+POST http://localhost:8786/api/v5/updateRules HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0MDciLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTU5NzEyMjkzMH0.uFMfMG_-FEHveYk3JpAorYWpkFolDcYs0IeaJLi8p-0
+ 
+{
+	"is_rules_displayed":"N"
+}
+
+###
+POST http://localhost:8786/api/v5/updatePassword HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxOCIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTc3NjE5MDQ1fQ.hcchso76dv1vIWX3zKhaYBppt1KjAKKAsdhITvq053w
+
+{
+	"oldPassword": "123456",
+	"confirmNewPassword": "Ab$123456",
+	"newPassword": "A123456@"
+}
+
+###
+POST http://localhost:8786/api/v5/payment HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4OCIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjM4MDAxMzEzfQ.CfXyOfYMGviHvW8tBqQoyWr4QQBYMKkvabIUivGs4AY
+
+{
+	"amount": 100
+}
+
+### "status": "Inprocess", "Completed","Failed","Canceled"
+POST http://localhost:8786/api/v5/cashfreesuccess HTTP/1.1
+Content-type: application/json
+
+{
+	"data":{"orderId":"8__1","orderAmount":"34.00","referenceId":"944824","txStatus":"SUCCESS","paymentMode":"CREDIT_CARD","txMsg":"Transaction Successful","txTime":"2021-06-25 16:16:06","signature":"Hd9UYuv9iiXoLTFnDMsiJwm2gn8yzREyGW+a7FVKqmE=","transaction_id":"8__1","amount":34}
+}
+
+### "status": "Inprocess", "Completed","Failed","Canceled"
+POST http://localhost:8786/api/v5/cashfreenotify HTTP/1.1
+Content-type: application/json
+
+{
+	"data":{"orderId":"8__1","orderAmount":"34.00","referenceId":"944824","txStatus":"SUCCESS","paymentMode":"CREDIT_CARD","txMsg":"Transaction Successful","txTime":"2021-06-25 16:16:06","signature":"Hd9UYuv9iiXoLTFnDMsiJwm2gn8yzREyGW+a7FVKqmE=","transaction_id":"8__1","amount":34},"status":"Success"
+}
+
+
+### "status": "Inprocess", "Completed","Failed","Canceled"
+POST http://localhost:8786/api/v5/paymentLog HTTP/1.1
+Content-type: application/json
+
+{
+	"data":{"orderId":"8__1","orderAmount":"34.00","referenceId":"944824","txStatus":"SUCCESS","paymentMode":"CREDIT_CARD","txMsg":"Transaction Successful","txTime":"2021-06-25 16:16:06","signature":"Hd9UYuv9iiXoLTFnDMsiJwm2gn8yzREyGW+a7FVKqmE=","transaction_id":"8__1","amount":34},"status":"Success"
+}
+
+###
+POST http://localhost:8786/api/v5/updateTimeZone HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0In0sImlhdCI6MTU3MTU3NjQzM30.eN7mRpDLilYfVfwtIP6FBMjr8pO2-tRg04HkyUg49W4
+
+{
+	"time_zone": "Asia/Kolkata +5:30",
+	"timezone_value": "19800"
+}
+
+### Done get user balance and site message Marque
+POST http://localhost:8786/api/v5/getUserBalance HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI1MzYiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYxODU2NzEzMn0.uOxUtzVKFTVFI5rw66HzLJVkBSO3rnGvnZ3Yh8WZOQE
+
+### Done 
+POST http://localhost:8786/api/v5/getSportList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2MjUwNTAxMDd9.9MCJ8ZaGNZD4QY7KYItNQ8DRZ9MHFjMgd9Ozhj6GTK8
+
+{
+	"limit": 10,
+	"pageno": 1
+}
+
+### Done 
+POST http://localhost:8786/api/v5/getSeriesListBySportId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTEwNjM2OX0.IOqQ1Kxzb2jfeIupgE7xBxil0Z1wQaMvCnbRF1O95yc
+
+{
+	"limit": 10,
+	"sport_id": 111,
+	"pageno": 1
+}
+
+### Done Dashboard Matches List 
+POST http://localhost:8786/api/v5/getMatchListForDashboard HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTEwODczNn0.BUoWTBx538qQE9ICKsiqMwVl7kuuxA9GpzEs8XMjnWs
+
+{
+	"limit": 10,
+	"pageno": 1 
+}
+ 
+### Done Get Matches by sport id OR Series ID , default series id is (0)
+POST http://localhost:8786/api/v5/getMatchsBySportAndSeriesId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxNyIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjQwODc5NzcyfQ.9C2wo38vfgSRDJszxDe9Et0Lf37yAp7JHhTvAxzmFs4
+
+{
+	"limit": 10,
+	"sport_id": 111,
+	"series_id":"0", 
+	"pageno": 1
+}
+### Done Get Matches by sport id OR Series ID , default series id is (0) liveline
+POST http://localhost:8786/api/v5/getLivLineMatchsBySportAndSeriesId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIyMjMiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTU5OTYzMTMzOH0.SvuWy_YRsJxcrOsC41vxDN67P7-1UUfOKxCojZ8sp5M
+
+{
+	"limit": 10,
+	"sport_id": 1,
+	"series_id":0,
+	"pageno": 1  
+}
+### Get Live Line favourite team odds
+POST http://localhost:8786/api/v5/getLivLineFavouriteTeamOdds HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{	
+	"sport_id": 4,
+	"match_id":10050326,
+	"market_id":"9.10050355_B"
+}
+
+### Done Get Bets By Match and Market & Fancy Id default market id 0 market id optional 1.164648187
+POST http://localhost:8786/api/v5/getBetsByMatchFancyORMarketeId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyNzczNjM5OH0.Amn6CBrMZ1ceyyAcFJPknLCSMhMmWBBF4J9CdHrfTIM
+
+{
+	"limit": 10,
+	"match_id":30736952, 
+	"market_id":"0",
+	"fancy_id":0,
+	"pageno": 1
+}
+
+
+### Done Get Bets By Match and Market & Fancy Id default market id 0 market id optional 1.164648187 Casino Match 
+POST http://localhost:8786/api/v5/getCasinoBetsByMatchFancyORMarketeId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4MyIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjA5ODQ2MjczfQ.7nkjYBlWFxKltG9GePxViqdNTX4RpzxGLRfdy9BnYKo
+
+{
+	"limit": 10,
+	"match_id":14210501171307, 
+	"market_id":"14.210501171307",	
+	"pageno": 1
+}
+
+### Get Inplay Matches List default sport id is 0
+POST http://localhost:8786/api/v5/getMatchesInplay HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"limit": 10,
+	"sport_id":0,
+	"pageno": 1
+}
+
+### Done get matches list by series id 
+POST http://localhost:8786/api/v5/getMatchListBySeriesId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"limit": 10,
+	"series_id": 11657823,
+	"pageno": 1
+}
+### Get Score By Match Id sport id and match id required
+POST http://localhost:8786/api/v5/getMatchScore HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4MyIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjExMzEzNTM5fQ.t8UZaV3_MmB81giXtmtCKlhN1oa7tbkGiIh4V2IXDmI
+
+{
+	"sport_id": 4,
+	"match_id": "30238527"
+}
+
+### Get casino last tenn result api   1516749
+POST http://localhost:8786/api/v5/lastresult HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2NDE4MzI2NjF9.Jyu7KBhouebuWAezzd2ekuC2IE56-jjWJRDE8yp8A_I
+
+{
+	"sport_id": 7776
+}
+### Get casino last tenn result api   1516749
+POST http://localhost:8786/api/v5/lastresultbydate HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDYwNSIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTg5MTA4MDIxfQ.Y4hlQM74hoP1LXu3_XwQou2zftOv0ppDKKN6o6XFnVc
+
+{
+	"sport_id": 6666,
+	"from_date":1588617000,
+	"to_date":1589110133,
+	"limit":10,
+	"pageno":1
+}
+### Get Score By Match Id sport id and match id required
+POST http://localhost:8786/api/v5/getMatchLiveTV HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"sport_id": 4,
+	"match_id": "29705657"
+}
+
+### Please send page slug
+GET http://localhost:8786/api/v5/getPagesList?slug=about-us HTTP/1.1
+
+1.) privacy-policy
+2.) contact-us
+3.) term-and-condition
+4.) about-us
+
+
+### isFav=true make fav || isFav=false make unfav 
+POST http://localhost:8786/api/v5/makeFavouriteMarket HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"market_id": "1.166821668", 
+	"isFav": true,
+	"match_id": 29635181	
+}
+### Get Favorite Matches List default sport id is 0
+POST http://localhost:8786/api/v5/getFavoriteMatchesList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"limit": 10,
+	"sport_id":0,
+	"pageno": 1
+}
+### User Account Statement  From ,toDate optional form date  1572593783
+POST http://localhost:8786/api/v5/getUserAccountStatement HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIzNyIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTgzMzg5MjEzfQ.FVL_PHzB5E0fnErM2Tk0PuqM2SieJafxDkg5wiitAgw
+
+{
+	"from_date":1581359400,
+	"to_date":1583432999,
+	"limit":10,
+	"pageno":1
+}
+
+### Please send one_click_stack comma seperated.
+### "match_stack":"100,200,300,400,500",
+### "one_click_stack": "100,200,300",
+POST http://localhost:8786/api/v5/updateOneClickAndMatchStack HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"one_click_stack": "100,200,300",
+	"match_stack":"0",
+	"sport_id": "1"
+}
+
+### Get user my bets list "betType":"C","P", P=Past, C=Current
+POST http://localhost:8786/api/v5/getUserMyBetsList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2NDIzMzEyNzZ9.uVWh0o7fnZ0blV3lvkH0QBBrjuZTdx5GWUiJ_ekdyD4
+
+{
+	"from_date":1642271400,
+	"to_date":1642357799,
+	"limit":15,
+	"sport_id":0,
+	"match_id":0,
+	"market_id":"0",
+	"betType":"C",
+	"pageno":1
+} 
+
+
+### Get user my bets list "type":"D","W"
+POST http://localhost:8786/api/v5/getAccountDetails HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2Mjg3NTQyODJ9.81j26hVvAkVJ5VGVqQwBfss_RLljk3KHJextvO03fck
+
+ {
+	 "type":"D"
+ }
+
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/getMatchDetailMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2Mjk1NDYwMjh9.9dvQ-YcGhem7pUR9zQPAMEmZFSfoN3rM-hTpbE3Fc_4
+
+
+{
+	"match_id":30799340,
+	"sport_id":4
+}
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/getMatchElectionMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMTUiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTY0NDczNzUzMX0.Qbu4wm1WKFf9opz9SIb6X2CoB3ju3DplggZBjG9dxYI
+
+
+{
+	"match_id":2102101733,
+	"sport_id":4545
+}
+
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/getMatchDetailMarketListNew HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxOTQiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTU5NTIyNTUzNX0.d37mafBuneiqMaysbD2lYM4fK8pG5CqelEJPLs7dtyA
+
+{
+	"match_id":29915825,	
+	"sport_id":4
+}
+
+### Match Signle Page Market List only soccer match
+POST http://localhost:8786/api/v5/getMatchSoccerMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTE4MzE5OX0.1SxMWh87iFMQyZluce8rq7JKSGqMPrK9HD0Vt6nHXo4
+
+{
+	"match_id":30783472,
+	"sport_id":1
+}
+
+### Match Signle Page Market List only casino match
+POST http://localhost:8786/api/v5/getMatchCasinoMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDQiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTY0MjI1Mjg3Nn0.lOKAuQ-kRWGWClwjUSIwRpXPAe7Qf1oYVo--2JpPj_0
+
+{
+	"match_id":23221601113616,
+	"sport_id":7776
+}
+
+
+### Match Signle Page Market List only tennis match
+POST http://localhost:8786/api/v5/getMatchTennisMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTE4MzE5OX0.1SxMWh87iFMQyZluce8rq7JKSGqMPrK9HD0Vt6nHXo4
+
+{
+	"match_id":30773298,
+	"sport_id":2
+}
+
+### Get Single Cup Match List only cup matche market list
+POST http://localhost:8786/api/v5/getCupsMatchDetails HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTE4MzE5OX0.1SxMWh87iFMQyZluce8rq7JKSGqMPrK9HD0Vt6nHXo4
+
+{
+	"match_id":28127348,
+	"sport_id":4
+}
+### Get Single HorseRacing Details only horse racing market list
+POST http://localhost:8786/api/v5/getHorseRacingMatchDetails HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDYwNSIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTg4NTY5MDQ3fQ.ObnJtKapBzFsJ5f4jBJBAcJbwa8WWYW6cUHi8031Fss
+
+{
+	"match_id":88228506,
+	"sport_id":7,
+	"market_id":"1.170368506"
+}
+
+### Get Single GreyHound Details only horse racing market list
+POST http://localhost:8786/api/v5/getGreyHoundRacingMatchDetails HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDYwNSIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTg4NDk5MTkzfQ.b48x5I2yj0TeiCsj6NQZGSRmC7RPseihS7a0Rb6NzUA
+
+{
+	"match_id":87845471,
+	"sport_id":4339,
+	"market_id":"1.170365471"
+}
+ 
+### Save Bet Api is_back => back => 1 , Lay => 0 
+### //"BOOK_MAKER_COMMISSION":1 /* ON-> Set Commission according other market, OFF-> Manual Market Commission always zero (0) */,
+POST http://localhost:8786/api/v5/saveBetData HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2MjkxOTI5NDh9.Kodnel6ZqibBgdO1nNf_9cKkS4k6rZwuZHy6sGqYd8s
+
+{
+	"match_id":"30795572",
+	"market_id":"1.186417335",
+	"selection_id":37303,
+	"odds":"1.02",
+	"stack":100,
+	"is_back":"1"
+}
+
+### Save Bet Api is_back => back => 1 , Lay => 0 
+POST http://localhost:8786/api/v5/saveCasinoBetData HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDQiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTY0MjI1Mjg3Nn0.lOKAuQ-kRWGWClwjUSIwRpXPAe7Qf1oYVo--2JpPj_0
+
+
+{
+	"match_id":"23221601143810",
+	"market_id":"23.221601143810_1",
+	"selection_id":"1",
+	"odds":"9",
+	"stack":100,
+	"is_back":"1"
+}
+### avinash top api done  
+
+
+### PROFIT & LOSS  list "betType":"C","P", P=Past, C=Current
+POST http://localhost:8786/api/v5/getUserProfitLossLMatchAndMarketWise HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTY2MTc4Mn0.cz6VTVVO9-c7L5HbvDA5ONwB_-Gb8L55N_lx-1Nv9VE
+
+{
+	"from_date":1621621800,
+	"to_date":1621708199,
+	"limit":20,
+	"sport_id":0,
+	"match_id":0,	
+	"betType":"P",
+	"pageno":1
+}
+
+### PROFIT & LOSS by match and sport id list
+POST http://localhost:8786/api/v5/getUserProfitLossLMatch HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTY2MTc4Mn0.cz6VTVVO9-c7L5HbvDA5ONwB_-Gb8L55N_lx-1Nv9VE
+
+{	
+	"sport_id":2224,
+	"match_id":1621662149
+}
+
+
+### Done Dashboard Matches List
+POST http://localhost:8786/api/v5/getMatchesPage HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"limit": 10,
+	"pageno": 1
+}
+
+### Done Dashboard Matches List
+
+### Get Match Session by Market Id
+POST http://localhost:8786/api/v5/getMatchIndianSessionByMarketId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyOTE4MzE5OX0.1SxMWh87iFMQyZluce8rq7JKSGqMPrK9HD0Vt6nHXo4
+
+{
+	"match_id":"2102101733"
+}
+
+### Get Match Session by Market Id
+POST http://localhost:8786/api/v5/getMatchIndianSessionByMarketIdm HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+
+	"market_id":"1.166320442"
+
+}
+
+
+### Save Bet Api is_back => back => 1 , Lay => 0 
+POST http://localhost:8786/api/v5/saveFancyBet HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2MjkxOTI5NDh9.Kodnel6ZqibBgdO1nNf_9cKkS4k6rZwuZHy6sGqYd8s
+
+
+{
+	"match_id":"30795572",
+	"size":120,
+	"fancy_id":"8",
+	"run":"23",
+	"stack":100,
+	"is_back":"0",
+	"sport_id":"4"
+}
+
+### my markets & matchs user
+
+### Save Bet Api sport_id= 0  get all
+POST http://localhost:8786/api/v5/getMyMatchesList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIyOCIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTc4NTY5Njc2fQ.EkH3wRutReiDLQ-u1skkFiJW4kMdlklY-w_KtPs0NeM
+
+{
+	"sport_id": 0
+}
+### user deposit and withdrawal request AL-> All list D-> deposit, W->Widthwral P- > Pending , C->Canceled,  A-> Approved , D->Decline
+POST http://localhost:8786/api/v5/userDepositWithdrawalRequestList HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2MjkzNTY1OTV9.NHyq28eGRC8HRYHPoxj8e1zVXIc1A_jFpTlJaxmb8uE
+
+{		
+	"from_date":1628793000,
+	"to_date":1629397799,
+	"type":"AL",
+	"status":"AL",
+	"page":1,
+	"limit":15
+}
+
+### user deposit and withdrawal request Type D->deposit , W->withdrawal
+POST http://localhost:8786/api/v5/userDepositWithdrawalRequest HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2MjUwNTAxMDd9.9MCJ8ZaGNZD4QY7KYItNQ8DRZ9MHFjMgd9Ozhj6GTK8
+
+{	
+	"amount":100,
+	"description":"avinash testing",
+	"image":"",
+	"type":"D",
+	"accountnumberphone":"9351338021",
+	"accountifsccode":"",
+	"accountholdername":"agent",
+	"useracinfoid":18,
+	"unique_transaction_id":"ABC134dDD",
+	"sender_name":"test",
+	"reciver_name":"agent",
+	"deposit_withdraw_type":"S",
+	"payment_method":"PT"
+}
+
+### user deposit and withdrawal request cancel
+POST http://localhost:8786/api/v5/userDepositWithdrawalCancel HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDYwNSIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNTg3MjA3NDI3fQ.P1ppyBYLKyDSIQPI3LgCpApPohPULVMOs9vaVocxY1c
+
+{	
+	"request_id":76,
+	"reason":"no resdon ddfd",
+	"type":"C"
+}
+
+### user start chat request send message all parent user ,dealer and super admin ### D->Dealer, SP -> Super Admin, A -> All
+POST http://localhost:8786/api/v5/userChatRequest HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE1OTQwOTg2NzN9.sNIOsBL7jlSp1W_dAq7hMLApUpSRAAB7R8mfPkhyfNs
+
+{	
+	"message":"message ticket id fdfsfa",
+	"access_user":"D",
+	"attachment":""
+}
+
+### user message chat request list   D->Dealer, SA -> Super Admin, A -> All P-> PENDING, R -> REPLIED, C -> CLOSED, CA -> CANCELLED
+POST http://localhost:8786/api/v5/userChatRequestList HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE1OTQwOTg2NzN9.sNIOsBL7jlSp1W_dAq7hMLApUpSRAAB7R8mfPkhyfNs
+
+{	
+	"from_date":0,
+	"to_date":0,
+	"type":"A",	
+	"status":"A",
+	"page":1,
+	"limit":15 
+}
+
+
+
+### user conversion list  type = O(Old), N(New), message_id=0
+POST http://localhost:8786/api/v5/userConversion HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE1OTQxMTg2NDV9.QEpZVuex6phERK-RLlwZw5S4zsAX-0yQMWFWZLV-kV8
+
+{	
+	"ticket_id":"TC97376",
+	"type":"0",
+	"message_id":"0",
+	"limit":15 
+}
+
+### user post message list
+POST http://localhost:8786/api/v5/userConversionChat HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE1OTQwOTg2NzN9.sNIOsBL7jlSp1W_dAq7hMLApUpSRAAB7R8mfPkhyfNs
+
+{	
+	"ticket_id":"TC36087",
+	"attachment":"",
+	"message":"dsfsd dsfdsfsfdsa"
+}
+
+### xpg cron
+POST http://localhost:8786/api/v5/xpgCron HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxOTQiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTU5NDgwMTA0NX0.6KEwlXoHCED8-CdWaHinpHV4VnjCKGjvA8h0s1obyuY
+
+{	
+	
+}
+
+
+### lotus Casion Controllers
+POST http://localhost:3003/api/poker/auth/ HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxOTQiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTU5NDgwMTA0NX0.6KEwlXoHCED8-CdWaHinpHV4VnjCKGjvA8h0s1obyuY
+
+{	
+	
+}
+### account statement xpg
+GET http://localhost:8786/api/v5/xpgstatementCron HTTP/1.1 
+
+
+### account statement xpg
+GET http://localhost:8786/api/v5/backoffice-casino-tv HTTP/1.1 
+
+
+
+### account statement xpg
+GET http://localhost:8786/api/v5/ezugistatementCron HTTP/1.1 
+
+
+### user deposit and withdrawal request cancel  P-> PENDING, R -> REPLIED, C -> CLOSED, CA -> CANCELLED
+POST http://localhost:8786/api/v5/userChatRequestCancel HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE1OTQyNzA5NjF9.vDU8LQYtt4YbxIAsh6eMP8dSu2nAk3Rm8oo_SxK1-fM
+
+{	
+	"request_id":"TC91817",
+	"reason":"no resdon ddfd",
+	"status":"CA"
+}
+
+### F12 faurd call insert user data
+POST http://localhost:8786/api/v5/userdata HTTP/1.1 
+Content-type: application/json
+Authorization: Bearer 
+
+{
+	
+}
+
+### admin match detilas
+POST http://localhost:8786/api/v5/backoffice-match-details HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30775612,
+	"user_id":1
+}
+
+
+
+### admin match detilas
+POST http://localhost:8786/api/v5/backoffice-match-user HTTP/1.1
+Content-type: application/json
+
+{
+	"user_name":"sis",
+	"user_id":1
+}
+
+### admin casino match detilas
+POST http://localhost:8786/api/v5/backoffice-casino-current-details HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":14210703124612,
+	"sport_id":7779,
+	"user_id":1
+}
+
+
+### admin casino match detilas
+POST http://localhost:8786/api/v5/backoffice-casino-details HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":14210703124612,
+	"sport_id":7779,
+	"user_id":1
+}
+
+
+### recaluclate fancy score position after admin delete bet
+POST http://localhost:8786/api/v5/backoffice-fancy-positon HTTP/1.1
+Content-type: application/json
+
+{	
+	"match_id":29888907,
+	"fancy_id":136646,
+	"user_id":7
+}
+
+###
+POST http://localhost:8786/api/v5/backoffice-match-completed HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":6,
+	"match_id":29888907,
+	"user_id":43
+}
+
+
+###
+POST http://localhost:8786/api/v5/backoffice-match-fancy HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30736952,
+	"user_id":1
+}
+###  market_id=0 get all record else market_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-match-mrkt-bet-list HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30736952,
+	"market_id":"0",
+	"user_id":1,
+	"search":"manu2",
+	"page": 1,
+	"limit":10000
+}
+
+###  market_id=0 get all record else market_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-casino-mrkt-bet-list HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":1546611,
+	"market_id":"0",
+	"user_id":1
+}
+
+###  market_id=0 get all record else market_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-complete-match-bet-list HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":29673030,
+	"market_id":"0",
+	"user_id":1,
+	"search":"500",
+	"limit":10000,
+	"page": 1
+}
+
+###  market_id=0 get all record else market_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-dashboard HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,	
+	"user_id":1,
+	"sport_id":1
+}
+
+
+###  fancy_id=0 get all record else fancy_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-mtch-fancy-bet-list HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30736952,
+	"fancy_id":"0",
+	"user_id":1,
+	"search":"73",
+	"limit":10000,
+	"page": 1
+}
+### my market list
+POST http://localhost:8786/api/v5/backoffice-my-market HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 1,
+	"role_id": 1,
+	"sport_id":0
+}
+
+
+###  Inplay matches
+POST http://localhost:8786/api/v5/backoffice-inplay-match HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 1,
+	"role_id": 1,
+	"sport_id":4
+}
+
+
+###  fancy_id=0 get all record else fancy_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-match-position HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30035278,	 
+	"user_id":1,
+	"market_id":"1.173504957"
+}
+
+
+###  fancy_id=0 get all record else fancy_id=1.166859497
+POST http://localhost:8786/api/v5/backoffice-fancy-position HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":1,
+	"match_id":30043096,	 
+	"user_id":1,
+	"fancy_id":"175_M"
+}
+
+### settlement 
+POST http://localhost:8786/api/v5/backoffice-settle-report HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":"NiCQlz496VOjScwdSkwx5p2lV9xNWVLXdA==",
+	"search":"",
+	"user_id":"MiCQlz496VOjScwdSkwx5p2lV9xNWVLXdjMxMzE="
+}
+
+### settlement 
+POST http://localhost:8786/api/v5/backoffice-place-betfair-bet HTTP/1.1
+Content-type: application/json
+
+
+{
+	"match_id":"MGD8Qhg7D7CgypndJ48VJUOrftyzCekFdzAyMDgyOTA=",
+	"market_id":"Oa1LIJhLPqK9JTHhVZ4lEyQBusWMidXcqS4zMDIwODI5MF9C",
+	"selection_id":"M5eTPazcPeST1nAX5kWkEawcnB1Dq8AlOzI2OTU0Nw==",
+	"odds":"OOg1HmbTjwyd4q5BTqGU37RMULTLZNDHRTk=",
+	"stack":"M81pdo5BMOvHmZVljNRWDd1WsL46BPH3vTAwMA==",
+	"is_back":"MiOX71EXoZTzuXQfFVJbaP5ZAu0uIUUcWQ==",
+	"user_id":"MmQ458kwg8z94gDTwFWyLDhNkH3KtAxOQTI2"
+}
+
+### settlement 
+POST http://localhost:8786/api/v5/backoffice-place-fancy-bet HTTP/1.1
+Content-type: application/json
+
+{
+	"match_id":"MOqDJoTpaVbRnND6CPc516UNxgKWajP94zAyMDgyOTA=",
+	"size":"Owi5ikXzlTljjWLymYDn8Kqlb2CWWgYikTA=",
+	"fancy_id":"M4wSKrmxjxEgqv8nF6Bg4dH7VvbnMeKChTc5X00=",
+	"run":"MfHBsy1OaZ181xBpvdCaoTi0EF7rx0T5ng==",
+	"stack":"NtGSd8A2Ij6GgXGDHCtwouro1RI6nulFVzA=",
+	"is_back":"MOmP3iLhQifR7pLmvezvSjkp2BSGSGf9XQ==",
+	"sport_id":"NeRsTTdXZimLqaNJIJIHQcg8lb6cyxezWA==",
+	"user_id":"OJcCcjfFrLISyzI02DrOMAgku8c23jiNBDM="
+}
+
+### admin client profit loss list 
+
+POST http://localhost:8786/api/v5/backoffice-p-l HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":"MYoMQool0eQkFbvEcduKKAHQamYWgEK9lg==",
+	"fromdate":1609212600,
+	"twodate":1609298940,
+	"user_id":"MYoMQool0eQkFbvEcduKKAHQamYWgEK9lTc="
+}
+
+### admin client profit loss list 
+
+POST http://localhost:8786/api/v5/backoffice-p-l-c HTTP/1.1
+Content-type: application/json
+
+{
+	"role_id":"M1NNGVWS31dqJBUPNN6CRgeBGvxiLV1CLQ==",
+	"fromdate":1609439400,
+	"twodate":1626578940,
+	"user_id":"M1NNGVWS31dqJBUPNN6CRgeBGvxiLV1CLQ==",
+	//"sport_id":"M1NNGVWS31dqJBUPNN6CRgeBGvxiLV1CLQ==",
+	"type":"M1NNGVWS31dqJBUPNN6CRgeBGvxiLV1CLQ=="
+}
+
+### Make Settlement  settlement user id   settlement user role id  when user plus than 1 and when user in minus than 2
+POST http://localhost:8786/api/v5/backoffice-sattlement HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": "NeQFKd68mkzzy6y3M8bCQpiKsle0T6wn7DUw",
+	"role_id":"NeQFKd68mkzzy6y3M8bCQpiKsle0T6wn7g==",
+	"type": 1,
+	"amount": "6",
+	"comment": ""
+} 
+
+### settlement collection history
+POST http://localhost:8786/api/v5/backoffice-sattlement-c-history HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 79,
+	"role_id": 2,
+	"parent_id":1,
+	"page": 1,
+	"opening_balance": "0"
+} 
+
+### settlement collection history list
+POST http://localhost:8786/api/v5/backoffice-sattlement-history HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 2,
+	"role_id": 1,
+	"parent_id":2,
+	"page": 1	
+} 
+
+
+
+
+### settlement collection history list
+POST http://localhost:8786/api/v5/backoffice-user-child HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 2
+ 
+} 
+
+
+
+### settlement collection history
+POST http://localhost:8786/api/v5/backoffice-delete HTTP/1.1
+Content-type: application/json
+
+{
+	"settlement_id": 8,
+	"password":"222"
+} 
+
+### settlement collection history by parent
+POST http://localhost:8786/api/v5/backoffice-sattlement-parent HTTP/1.1
+Content-type: application/json
+
+{
+	"user_id": 7,
+	"page": 1 
+} 
+
+
+
+### settlement collection history by parent
+POST http://localhost:8786/api/v5/backoffice-add-casino-match HTTP/1.1
+Content-type: application/json
+
+{
+	"sport_id": 7776,
+	"data": {"success":true,"result":[{"createdBy":"Worli2","marketHeader":"Match odds","roundId":"23.221501184033","indexCard":["D1","H6"],"id":"","gameId":"9987","marketRunner":[{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":1,"name":1,"sortPriority":1,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":2,"name":2,"sortPriority":2,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":3,"name":3,"sortPriority":3,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":4,"name":4,"sortPriority":4,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":5,"name":5,"sortPriority":5,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":6,"name":6,"sortPriority":6,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":7,"name":7,"sortPriority":7,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":8,"name":8,"sortPriority":8,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":9,"name":9,"sortPriority":9,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"plain","back":[{"price":9,"size":"1000"}],"lay":[],"id":0,"name":0,"sortPriority":10,"pl":0,"status":"SUSPENDED","resDesc":""}],"gameType":"Worli2","gameSubType":"Worli2","runnerType":"main","stage":0,"timer":"3","createdAt":"2022-01-15T13:11:54.087Z","updatedAt":"","v":0,"marketValidity":0,"status":"SUSPENDED","matchName":"Worli2","matchId":"23221501184033"},{"createdBy":"Worli2","marketHeader":"Line Market","roundId":"23.221501184033_1","indexCard":["D1","H6"],"id":"","gameId":"9987","marketRunner":[{"cards":[],"type":"line","back":[{"price":9,"size":"1000"}],"lay":[],"id":1,"name":"Line 1","numbers":[1,2,3,4,5],"sortPriority":1,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"line","back":[{"price":9,"size":"1000"}],"lay":[],"id":2,"name":"Line 2","numbers":[6,7,8,9,0],"sortPriority":2,"pl":0,"status":"SUSPENDED","resDesc":""}],"gameType":"Worli2","gameSubType":"Worli2","runnerType":"line","stage":0,"timer":"3","createdAt":"2022-01-15T13:11:54.087Z","updatedAt":"","v":0,"marketValidity":0,"status":"SUSPENDED","matchName":"Worli2","matchId":"23221501184033"},{"createdBy":"Worli2","marketHeader":"Odd Even Market","roundId":"23.221501184033_2","indexCard":["D1","H6"],"id":"","gameId":"9987","marketRunner":[{"cards":[],"type":"oe","back":[{"price":9,"size":"1000"}],"lay":[],"id":1,"name":"ODD","numbers":[1,3,5,7,9],"sortPriority":1,"pl":0,"status":"SUSPENDED","resDesc":""},{"cards":[],"type":"oe","back":[{"price":9,"size":"1000"}],"lay":[],"id":2,"name":"EVEN","numbers":[2,4,6,8,0],"sortPriority":2,"pl":0,"status":"SUSPENDED","resDesc":""}],"gameType":"Worli2","gameSubType":"Worli2","runnerType":"oddeven","stage":0,"timer":"3","createdAt":"2022-01-15T13:11:54.087Z","updatedAt":"","v":0,"marketValidity":0,"status":"SUSPENDED","matchName":"Worli2","matchId":"23221501184033"}]}
+
+} 
+
+
+# ### add casino matches cron
+# POST http://localhost:8786/api/v5/admin_addCasinoMatches HTTP/1.1
+# Content-type: application/json
+
+# {
+# 	"sport_id":1112
+# }
+### add casino match by post
+POST http://localhost:8786/api/v5/getMatchMarketOdds HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{	
+	"market_id":"1.164386962"
+}
+
+### Match Signle Page Market List only use cricket
+POST http://172.105.41.121:3003/api/v1/getMatchMarketLiveOdds HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI2IiwidXNlcl90eXBlX2lkIjoiNiJ9LCJpYXQiOjE2NDA3MTQ0MjF9.TN_Dori_JnpNNNWWF6hSewYdGDUepDgqAAonRpWfOno
+
+{"match_id":"31144839","requestData":{"mo":{"id":"1.192771274","bxyz":"MHtEDhcTKdIcq9xegTWkxXmCB3YQS5GpFC4wMA==","lxyz":"MzymNOz49XF8sEL2o4WcB2UHkn2qVCqsKC4wMA==","vxyz":"MbPE9qJs5pggnVD5g9eKoyWrxcPxGkbKaS4wMA==","mxyz":"B"},"mob":{"id":"9.6789234_B","bxyz":"MNhRmNjIvydSOgX11xhLeE5EcsrhOCeBaC4wMA==","lxyz":"MSTJuYpmaslP4xhDb3QAeyvdJw9yj0xx8C4wMA==","vxyz":"MVmTJNDFr7K9vRkNYEUvhNc6SrwI4rxmVS4wMA==","mxyz":"BM"},"om":[],"sa":[],"sm":[]}}
+
+
+
+
+### Please send page slug
+GET http://localhost:8786/api/v5/backoffice-casino-match?sport_id=5557 HTTP/1.1
+
+
+### Please send page slug only user 7up-down or matka
+GET http://localhost:8786/api/v5/backoffice-casino-match-add-updown-match?sport_id=5557 HTTP/1.1
+
+
+### Abandoned casino matches by sport id only active matches 
+GET http://localhost:8786/api/v5/backoffice-casino-result-sport_id?sport_id=7779 HTTP/1.1
+
+
+### Abandoned casino matches by sport id only active matches 
+GET https://cp.jumbo555.com/api/v1/backoffice-user-expo HTTP/1.1
+
+
+### clear user login logs and remaining balance table data
+GET http://localhost:8786/api/v5/backoffice-clear-log HTTP/1.1
+
+### insert casino result record
+GET http://localhost:8786/api/v5/backoffice-casino-result-rec?sport_id=56768&db_sport_id=1111 HTTP/1.1
+
+### Done All Avi 
+
+### add casino matches convert diamond to lotus matches
+GET http://localhost:8786/api/v5/admin_addCasinoDiamonToLotusT20 HTTP/1.1
+
+
+### add casino matches convert diamond to lotus matches
+GET http://localhost:8786/api/v5/admin_addCasinoDiamonToLotusTODI HTTP/1.1
+
+
+### Done Bhav API saddam sir
+POST http://localhost:8786/api/v5/getMatchMarketOdds HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{	
+	"market_id":"1.164386962"
+}
+
+
+### Bhav Api
+
+### Done
+POST http://localhost:8786/api/v5/getFavouriteList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+
+
+
+### Please send market_id comma seperated.
+POST http://localhost:8786/api/v5/getOddsByMarketId HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"market_id": "1.164038799,1.164038799"
+}
+
+
+### Please send market_id comma seperated.
+POST http://localhost:8786/api/v5/getOddsAndSession HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI3In0sImlhdCI6MTU3NTcyMDUyMn0.FhUFNYBlzWNY1WSZGbf39D4-VFgJExRMCiinEdMhZNY
+
+{
+	"market_id": "1.164038799,1.164038799",
+	"match_id": "28038799"
+}
+
+### Please send market_id comma seperated.
+GET http://localhost:8786/api/v5/getAllMarket/ HTTP/1.1
+
+
+#####
+1. getFavouriteList
+2. getAPIListFile
+3. getProfile
+
+
+###
+POST http://172.105.59.46:4003/api/v1/getMatchandScore HTTP/1.1
+content-type: application/json
+
+###
+GET http://172.105.59.46:4003/api/v1/getScore?matchId=29626138 HTTP/1.1
+content-type: application/json
+
+###
+GET http://172.105.59.46:4003/api/v1/getScoreMultiple?matchId=22222,29531665 HTTP/1.1
+content-type: application/json
+
+
+###
+POST http://172.105.59.46:4003/api/v1/addMatchandScore HTTP/1.1
+content-type: application/json
+
+{
+"scoreid": "La",
+      "matchid": "29586019"
+}
+
+###
+POST http://172.105.59.46:4003/api/v1/deleteMatchandScore HTTP/1.1
+content-type: application/json
+
+{
+	"scoreid": "S",
+    "matchid": "30799340"
+}
+
+
+### Save Bet Api is_back => back => 1 , Lay => 0 
+POST http://localhost:8786/api/v5/saveMatkaTempBetsData HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTU4MTk3MX0.nKOi_HUNvGXLyEfY9O8qvm-CIUtLjBB-wWRjnPmUseU
+
+{
+	"match_id":"1621581319",
+	"bet_data":{"1.16215813201695":[{"selection_id":0,"amount":"100","market_id":"1.16215813201695"}]}
+}
+
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/getMatchTitliMarketList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTU4MTk3MX0.nKOi_HUNvGXLyEfY9O8qvm-CIUtLjBB-wWRjnPmUseU
+
+{
+	"sport_id":2225
+}
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/saveTitliBetData HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTU4MTk3MX0.nKOi_HUNvGXLyEfY9O8qvm-CIUtLjBB-wWRjnPmUseU
+
+{
+	"match_id":"1621602704739",
+	"bet_data":[{"selection_id":1,"amount":"50","market_id":"2.1621602704282"}]
+}
+
+
+### Match Signle Page Market List only use cricket
+POST http://localhost:8786/api/v5/slotegratorCallBackUrl HTTP/1.1
+Content-type: application/json
+
+{
+	"match_id":"1621602704739",
+	"bet_data":[{"selection_id":1,"amount":"50","market_id":"2.1621602704282"}]
+}
+
+
+### 
+POST http://localhost:8786/api/v5/getThimbleDetail HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTY4NjQzN30.wGJd4yWG98TWwpErLbFWo7sWBVENsgjexe55RpFcbV8
+
+{
+	"sport_id" : 444
+}
+
+
+### 
+POST http://localhost:8786/api/v5/saveThimbleUserlog HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4NCIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjEyMjQxNDE1fQ.Gv_wYtR6I78hd2M7sh-xGsOcOo_4bnR6L82kWPdLzZM
+
+{
+	"stack" : "100"
+}
+
+### 
+POST http://localhost:8786/api/v5/saveThimbleBet HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI4NCIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjEyMjQxNDE1fQ.Gv_wYtR6I78hd2M7sh-xGsOcOo_4bnR6L82kWPdLzZM
+
+{
+	"match_id" : 1613974970,
+	"selection_id" : "2"
+}
+
+### Save Bet Api is_back => back => 1 , Lay => 0 
+POST http://localhost:8786/api/v5/saveMatkaBetData HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiIxMDI2OSIsInVzZXJfdHlwZV9pZCI6IjYifSwiaWF0IjoxNjE1MTkwMjE1fQ.0oM7m96-AThhedZ0olEYFs1dL5q_Q2uv52oAP5oEIJ4
+
+{
+	"match_id" : "1615165894852"
+}
+
+### 
+POST http://localhost:8786/api/v5/getThimbleBetList HTTP/1.1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOiI0NDAiLCJ1c2VyX3R5cGVfaWQiOiI2In0sImlhdCI6MTYyMTY4NjQzN30.wGJd4yWG98TWwpErLbFWo7sWBVENsgjexe55RpFcbV8
+
+{
+	"sport_id" : 444
+}
+### 
+GET https://pc.jumbo555.com/api/v1/backoffice-add-fun-match HTTP/1.1
+Content-type: application/json
+ 

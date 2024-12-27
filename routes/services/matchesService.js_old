@@ -1,0 +1,116 @@
+const	globalFunction = require('../../utils/globalFunction');
+const	CONSTANTS = require('../../utils/constants');
+const	userModel = require('../../routes/model/userModel');
+const	exchangeService = require('./exchangeService');
+let resultdb = globalFunction.resultdb;
+const { poolPromise,sql } = require('../../db')
+
+// Avinash Code
+
+let getBetsByMatchORMarketeId = async (data) => {
+	try {
+		
+		const pool = await poolPromise;		
+		let query = "SELECT bet.id,bet.user_id,bet.agent_id,bet.master_id,bet.super_master_id,bet.admin_id,bet.super_admin_id,bet.sport_id,bet.match_id,mrkt.market_id, mrkt.name as marketName,selection.selection_id as selectionId,(CASE WHEN bet.delete_status=2 THEN 'Void' ELSE bet.delete_status END) as status,selection.name as selectionName,bet.odds,bet.stack,bet.is_back,ROUND((CASE WHEN bet.is_back=1 THEN bet.p_l ELSE bet.liability END),2) AS p_l,bet.is_matched,bet.bet_matched_at,bet.created_ip,bet.created_at from bets_odds as bet INNER JOIN markets as mrkt ON mrkt.market_id = bet.market_id AND mrkt.match_id="+data.match_id+" INNER JOIN market_selections as selection ON selection.selection_id = bet.selection_id AND selection.match_id="+data.match_id+" AND  selection.market_id=bet.market_id where bet.user_id="+data.id+" AND (bet.delete_status=0 OR bet.delete_status=2 ) AND (bet.bet_result_id=0 OR bet.bet_result_id='' ) AND bet.match_id="+data.match_id+" AND selection.match_id="+data.match_id+"";
+		 if(data.market_id !=0){
+		 	query+=" AND bet.market_id="+data.market_id+" AND  selection.market_id="+data.market_id+"";	
+		}	
+		query+=' ORDER BY id DESC';
+		//console.log(query);
+		const result = await pool.request()
+		.query(query)	
+		if (result===null) {
+			return resultdb(CONSTANTS.NOT_FOUND, CONSTANTS.BLANK_ARRAY);
+		}else{
+			  return resultdb(CONSTANTS.SUCCESS, result.recordset);
+		}
+		
+	} catch (error) {
+		console.log(error);
+		return resultdb(CONSTANTS.SERVER_ERROR, CONSTANTS.DATA_NULL);
+	}
+};
+/*Get Casino Match bets */
+
+let getCasinoBetsByMatchORMarketeId = async (data) => {
+	try {
+		
+		const pool = await poolPromise;		
+		let query = "SELECT bet.id,bet.user_id,bet.agent_id,bet.master_id,bet.super_master_id,bet.admin_id,bet.super_admin_id,bet.sport_id,bet.match_id,mrkt.market_id, mrkt.name + ' #' + mrkt.market_id as marketName,selection.selection_id as selectionId,(CASE WHEN bet.delete_status=2 THEN 'Void' ELSE bet.delete_status END) as status,selection.name as selectionName,bet.odds,bet.stack,bet.is_back,ROUND((CASE WHEN bet.is_back=1 THEN bet.p_l ELSE bet.liability END),2) AS p_l,bet.is_matched,bet.bet_matched_at,bet.created_ip,bet.created_at from cassino_bets_odds as bet INNER JOIN cassino_markets as mrkt ON mrkt.market_id = bet.market_id AND mrkt.match_id="+data.match_id+" INNER JOIN cassino_market_selections as selection ON selection.selection_id = bet.selection_id AND selection.match_id="+data.match_id+" AND  selection.market_id=bet.market_id where bet.user_id="+data.id+" AND (bet.delete_status=0 OR bet.delete_status=2 ) AND bet.match_id="+data.match_id+" AND selection.match_id="+data.match_id+"";
+		 if(data.market_id !=0){
+		 	query+=" AND bet.market_id="+data.market_id+" AND  selection.market_id="+data.market_id+"";	
+		}	
+		query+=' ORDER BY id DESC';
+		//console.log(query);
+		const result = await pool.request()
+		.query(query)	
+		if (result===null) {
+			return resultdb(CONSTANTS.NOT_FOUND, CONSTANTS.BLANK_ARRAY);
+		}else{
+			  return resultdb(CONSTANTS.SUCCESS, result.recordset);
+		}
+		
+	} catch (error) {
+		console.log(error);
+		return resultdb(CONSTANTS.SERVER_ERROR, CONSTANTS.DATA_NULL);
+	}
+};
+
+let getBetsByMatchORFancyId = async (data) => {
+	try {
+		
+		const pool = await poolPromise;	
+		let query = "SELECT bet.id,bet.user_id,bet.agent_id,bet.master_id,bet.super_master_id,bet.admin_id,bet.super_admin_id,bet.sport_id,bet.match_id,bet.fancy_id,bet.stack,bet.is_back,bet.run,bet.size,bet.liability,(CASE WHEN bet.delete_status=2 THEN 'Void' ELSE bet.delete_status END) as status,ROUND((CASE WHEN bet.is_back=1 THEN bet.profit ELSE bet.liability END),2) AS profit, bet.type_id,bet.chips,bet.fancy_name,bet.session_input_yes,bet.session_input_no,bet.point_difference,bet.created_ip,bet.created_at from bets_fancy as bet where bet.user_id= "+data.id+" AND bet.match_id= "+data.match_id+" AND (bet.delete_status=0 OR bet.delete_status=2 ) AND (bet.bet_result_id=0 OR bet.bet_result_id IS NULL ) ";		
+		 if(data.fancy_id !=0){
+			 query+=" AND bet.super_admin_id="+data.fancy_id;
+			 //conditonArray.push()	
+		}	
+
+		query+='ORDER BY id DESC';
+		console.log(query);
+		const result = await pool.request()
+		.query(query)	
+		if (result===null) {
+			return resultdb(CONSTANTS.NOT_FOUND, CONSTANTS.DATA_NULL);
+		}else{
+			  return resultdb(CONSTANTS.SUCCESS, result.recordset);
+		}
+		
+	} catch (error) {
+		console.log(error);
+		return resultdb(CONSTANTS.SERVER_ERROR, CONSTANTS.DATA_NULL);
+	}
+};
+let getMyMatchesList = async (data) => {
+	try {
+		const pool = await poolPromise;	
+		let query = "SELECT  spt.name as SportName, ISNULL(mkts.market_admin_message,'') as adminMessage,'' AS InplayStatus,(CASE WHEN mkts.bet_allow_time_before >0 THEN mkts.bet_allow_time_before ELSE spt.bet_allow_time_before END) AS BetAllowTimeBefore, (CASE WHEN spt.is_bet_allow = mkts.is_bet_allow THEN 'Y' ELSE 'N' END) AS IsBetAllow,ISNULL(fav.match_id ,0) as favMatchID, spt.odd_limit_back as backRateDiff,spt.odd_limit_lay as layRateDiff,mtch.series_id, mtch.match_id, mtch.name, (CASE WHEN (select dbo.check_match_fancy_deactive_for_user(mtch.match_id,"+data.id+"))= 0 THEN 'Y' ELSE 'N' END) AS IsFancyAllow, mtch.start_date,spt.volume_limit as matchVolumn, mtch.sport_id, mkts.market_id as market_id,mkts.runner_json FROM matches as mtch JOIN sports as spt ON spt.sport_id = mtch.sport_id  JOIN markets mkts ON mkts.match_id=mtch.match_id AND mkts.name='Match Odds' LEFT JOIN favourites as fav ON fav.match_id=mtch.match_id AND fav.market_id= mkts.market_id AND fav.user_id="+data.id+" where (Select dbo.check_match_deactive_for_user(mtch.match_id,"+data.id+"))=0  AND (mtch.match_id=(select TOP 1  match_id from odds_profit_loss where user_id="+data.id+" AND match_id=mtch.match_id ) OR mtch.match_id=(select TOP 1  match_id from fancy_score_positions where user_id="+data.id+" AND match_id=mtch.match_id ) ) AND (select dbo.check_sports_deactive_for_user(mtch.sport_id,"+data.id+"))=0 AND spt.status='Y' AND mtch.status='Y' AND mtch.is_completed='N' ";	 
+		if(data.sport_id > 0 && data.sport_id !=0)	
+		  {		
+			query+=" AND mtch.sport_id="+data.sport_id+"";
+		  }	
+		//console.log(query);
+		const result = await pool.request()
+		.query(query)	
+		if (result.recordset===null || result.recordset.length ===0 ) {
+			return resultdb(CONSTANTS.NOT_FOUND, CONSTANTS.DATA_NULL);
+		}else{
+			let marketData=result.recordset.map((data)=>(data.market_id));
+			let oddsData=await exchangeService.getOddsByMarketIds(marketData);
+			let newdata=result.recordset.map((data)=>(
+				oddsData.data[data.market_id]?{...data,runner_json:oddsData.data[data.market_id].runners,InplayStatus:oddsData.data[data.market_id].status ? oddsData.data[data.market_id].status:'CLOSE'}:{...data,runner_json:data.runner_json?JSON.parse(data.runner_json):data.runner_json,InplayStatus:'CLOSE'}
+			));
+			return resultdb(CONSTANTS.SUCCESS, newdata);
+		}		
+	} catch (error) {
+		console.log(error);
+		return resultdb(CONSTANTS.SERVER_ERROR, CONSTANTS.DATA_NULL);
+	}
+};
+
+module.exports = {	
+	getBetsByMatchORMarketeId,
+	getCasinoBetsByMatchORMarketeId,
+	getBetsByMatchORFancyId,
+	getMyMatchesList
+};

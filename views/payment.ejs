@@ -1,0 +1,11 @@
+<title>Just Passing Main paramList to KP Gateway Log</title><body>
+<center><h1>Please do not refresh and close this page/window...</h1></center>
+<form id="paymentform" method="post" action="<%=kp_txn%>" name="f1">
+    <input type="hidden" name="KPMID" value="<%=kpmid%>"/>
+    <input type="hidden" name="CUST_KP_ID" value="<%=customerIdvalue%>"/>
+    <input type="hidden" name="KP_Txn_OrderID" value="<%=order_id%>"/>
+    <input type="hidden" name="KP_Txn_Signature" value="<%=signature%>"/>
+    <input type="hidden" name="KP_Txn_Token" value="<%=token%>"/>
+    <input type="hidden" name="KP_Return_URL" value="<%=call_back%>"/>
+    <script type="text/javascript">document.f1.submit();</script>
+  </form>

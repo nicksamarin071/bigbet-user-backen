@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kwikpaisa - Response Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+<div class="container"> 
+	<div class="panel panel-success">
+	  <div class="panel-heading">Payment <%=txn_status%></div>
+	  <div class="panel-body">
+	  
+	 		<table class="table table-hover">
+			    <tbody>
+			      <tr>
+			        <td>Order ID</td>
+			        <td><%=midorderid%></td>
+			      </tr>
+			      <tr>
+			        <td>Order Amount</td>
+			        <td><%=txn_amount%></td>
+			      </tr>
+			      <tr>
+			        <td>Transaction ID</td>
+			        <td><%=txn_id%></td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Status</td>
+			        <td><%=txn_status%></td>
+			      </tr>
+			      <tr>
+			        <td>Currency</td>
+			        <td><%=txn_currency%></td>
+			      </tr>
+			      <tr>
+			        <td>Payment By</td>
+			        <td><%=mode%></td>
+			      </tr>
+			      <tr>
+			        <td>Transaction Time</td>
+			        <td><%=txn_time%></td>
+			      </tr>
+			    </tbody>
+			</table>
+		<button type="button" onclick="window.print();">PRINT</button>
+		<button type="button" onclick="window.close();">OK</button>
+
+	   </div>
+	</div>
+	</div>
+<?php } ?>
+</body>
+</html>

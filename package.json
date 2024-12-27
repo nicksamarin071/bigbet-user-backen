@@ -1,0 +1,82 @@
+{
+  "name": "nodejs-folder-structure",
+  "version": "1.0.0",
+  "description": "https://medium.com/codebase/structure-of-a-nodejs-api-project-cdecb46ef3f8",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "fuser -k 3003/tcp && nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Avinash Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "@firebase/app": "^0.6.20",
+    "app-root-path": "^2.1.0",
+    "async-redis": "^1.1.4",
+    "axios": "^0.18.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "bignumber.js": "^8.0.1",
+    "body-parser": "^1.20.1",
+    "browser-detect": "^0.2.28",
+    "cloudinary": "^1.11.0",
+    "cluster": "^0.7.7",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.0.0",
+    "delay": "^4.3.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.1.4",
+    "express-jwt": "^5.3.1",
+    "express-rate-limit": "^3.4.0",
+    "fcm-node": "^1.6.1",
+    "firebase-admin": "^9.7.0",
+    "form-data": "^4.0.0",
+    "fs": "0.0.1-security",
+    "interval-promise": "^1.3.0",
+    "joi": "^13.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.29.4",
+    "mongoose": "^5.2.16",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.9.1",
+    "mssql": "^5.1.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "path": "^0.12.7",
+    "pm2": "^4.5.0",
+    "promise-mysql": "^3.3.2",
+    "querystring": "^0.2.0",
+    "sequelize": "^5.2.12",
+    "sequelize-values": "^1.1.0",
+    "sha2": "^1.0.2",
+    "ts-md5": "^1.2.10",
+    "underscore": "^1.13.6",
+    "uuid": "^3.3.2",
+    "winston": "^2.4.3",
+    "winston-daily-rotate-file": "^3.8.0",
+    "xml2json-light": "^1.0.6",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "ws": "3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saddam1997/betting-sny.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saddam1997/betting-sny/issues"
+  },
+  "homepage": "https://github.com/saddam1997/betting-sny#readme"
+}

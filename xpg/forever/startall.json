@@ -1,0 +1,24 @@
+[
+	{
+	    "uid": "XPG_SYNC",
+	    "append": true,
+	    "watch": true,
+	    "script": "XPG_SYNC.js",
+	    "sourceDir": "/home/ubuntu/betting-sny/xpg/XPG_SYNC",
+	    "logFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_SYNC_forever.log",
+	    "outFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_SYNC_out.log",
+	    "errFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_SYNC_error.log"
+	},
+
+	{
+	    "uid": "XPG_EZUGI_STATEMENT_SYNC",
+	    "append": true,
+	    "watch": true,
+	    "script": "XPG_EZUGI_STATEMENT_SYNC.js",
+	    "sourceDir": "/home/ubuntu/betting-sny/xpg/XPG_EZUGI_STATEMENT_SYNC",
+	    "logFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_EZUGI_STATEMENT_SYNC_forever.log",
+	    "outFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_EZUGI_STATEMENT_SYNC_out.log",
+	    "errFile": "/home/ubuntu/betting-sny/xpg/logs/XPG_EZUGI_STATEMENT_SYNC_error.log"
+	}
+
+]
